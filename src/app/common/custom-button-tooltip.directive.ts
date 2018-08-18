@@ -56,18 +56,6 @@ export class CustomButtonTooltipDirective implements OnInit, OnDestroy {
     this.isPositionBelow = !isInViewport(this.elementRef.nativeElement);
     this.show();
   }
-  // isInViewport(elem) {
-  //   const bounding = elem.getBoundingClientRect();
-  //   // console.log(bounding);
-  //   return (
-  //     bounding.top >= 0 &&
-  //     bounding.left >= 0 &&
-  //     bounding.bottom <=
-  //       (window.innerHeight || document.documentElement.clientHeight) &&
-  //     bounding.right <=
-  //       (window.innerWidth || document.documentElement.clientWidth)
-  //   );
-  // }
 
   @HostListener('click')
   onClick() {
@@ -89,13 +77,13 @@ export class CustomButtonTooltipDirective implements OnInit, OnDestroy {
   ngOnInit() {}
 
   ngOnDestroy() {
-    this.htmlDivElement.remove();
+    this.hide();
   }
 
   show() {
     // debugger;
     if (this.htmlDivElement) {
-      this.htmlDivElement.remove();
+      this.hide();
     }
     this.htmlDivElement = this.getTooltipElement(
       this.isPositionBelow,
