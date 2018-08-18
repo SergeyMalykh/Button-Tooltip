@@ -1,0 +1,101 @@
+$primary-color-text: #433;
+$primary-color-background: rgb(247, 247, 247);
+$primary-color-border: #360f0f;
+
+%roottooltip {
+  padding: 10px;
+  color: $primary-color-text;
+  border: 1px solid $primary-color-border;
+  background-color: $primary-color-background;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+%roottooltip-after {
+  position: absolute;
+  content: '';
+  border: 10px solid;
+
+  right: calc(100% - 40px);
+}
+
+@mixin roottooltip-position($position) {
+  @if $position == 'top' {
+    bottom: 100%;
+    margin-top: -70px;
+  } @else if $position == 'bottom' {
+    top: 100%;
+    margin-top: 20px;
+  }
+}
+
+@mixin roottooltip-after-position($position) {
+  @if $position == 'top' {
+    border-color: $primary-color-background
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0);
+    top: 100%;
+  } @else if $position == 'bottom' {
+    border-color: rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      $primary-color-background
+      rgba(0, 0, 0, 0);
+    top: 0px;
+    margin-top: -20px;
+    /*transform: translateX(-100px)*/
+  }
+}
+
+@mixin roottooltip-before-position($position) {
+  @if $position == 'top' {
+    border: 11px solid;
+    margin-right: -1px;
+    border-color: $primary-color-border
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0);
+    top: 100%;
+  } @else if $position == 'bottom' {
+    border: 11px solid;
+    margin-right: -1px;
+    border-color: rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      $primary-color-border
+      rgba(0, 0, 0, 0);
+    top: 0px;
+    margin-top: -22px;
+    /*transform: translateX(-100px)*/
+  }
+}
+
+.roottooltip-top {
+  @extend %roottooltip;
+  @include roottooltip-position('top');
+}
+.roottooltip-bottom {
+  @extend %roottooltip;
+  @include roottooltip-position('bottom');
+}
+
+.roottooltip-top:after {
+  @extend %roottooltip-after;
+  @include roottooltip-after-position('top');
+}
+
+.roottooltip-bottom:after {
+  @extend %roottooltip-after;
+  @include roottooltip-after-position('bottom');
+}
+
+.roottooltip-top:before {
+  @extend %roottooltip-after;
+  @include roottooltip-before-position('top');
+}
+
+.roottooltip-bottom:before {
+  @extend %roottooltip-after;
+  @include roottooltip-before-position('bottom');
+}

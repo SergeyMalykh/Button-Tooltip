@@ -1,0 +1,79 @@
+<header>
+  <div class="container button-container">
+
+
+    <p style="text-align:center">
+      <span style="font-size:14px">
+        <strong>Part I - Front End</strong>
+      </span>
+    </p>
+    <p>
+      <strong>Objective</strong>
+    </p>
+
+    <p>Create a single page Angular 4+ app with simple routing that has one state/view. In it, place two buttons that when clicked;
+      show a tooltip above the button with some text in it.
+      <br>When button A is clicked, if button B’s tooltip is open it should close and vice versa - only one tooltip should be
+      visible at a time. Either tooltip should close when clicked anywhere outside of it, but remain open if clicked inside.
+      Either tooltip should close when ESC key is pressed.</p>
+
+
+  </div>
+</header>
+<app-tooltip-test></app-tooltip-test>
+
+<footer>
+
+  <div class="container">
+
+
+    <div id=":pf" class="ii gt">
+      <div id=":pg" class="a3s aXjCH ">
+
+        <p>Implementation</p>
+
+        <ol>
+          <li>Tooltip functionality should be written as a reusable component
+            <span class="solution">(Its activated by attribyte 'appCustomButtonTooltip'. See CustomButtonTooltipDirective)
+            </span>
+          </li>
+          <li>You are encouraged to use a starter/seed project to save time scaffolding
+            <span class="solution">(Used Angular Command Line Interface:
+              <br/>ng new tooltip
+              <br/>ng serve --open
+              <br/>ng generate component tooltip-test
+              <br/>ng generate directive common/customButtonTooltip)</span>
+          </li>
+          <li>You can organize the files/folders in any way</li>
+          <li>The reviewer should be able to run your solution with a simple npm command</li>
+          <li>You should submit your solution as a github repository link</li>
+        </ol>
+
+      </div>
+    </div>
+
+
+    <p>
+      <strong>Bonus</strong>
+    </p>
+
+    <p>If you scroll down to an open tooltip it should detect being at the edge of the screen and change position to be below
+      the button +++
+      <span class="solution">(Please test it, its working)</span>
+    </p>
+
+    <p>Style using Bootstrap sass ++
+      <span class="solution">(all styles are done in SCSS. Its next generation of sass)</span>
+    </p>
+
+    <p>Add at least one accessibility feature +
+      <span class="solution">(Control Tab Order in HTML nevigated by tabindex between 'button', 'a', 'div' based buttons)</span>
+    </p>
+
+    <p>&nbsp;</p>
+
+
+
+  </div>
+
+</footer>
