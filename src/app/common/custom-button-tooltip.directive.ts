@@ -107,8 +107,8 @@ export class CustomButtonTooltipDirective implements OnInit, OnDestroy {
     tooltipContent: string
   ): HTMLDivElement {
     const customButtonTooltipClass = isPositionBelow
-      ? 'roottooltip-bottom'
-      : 'roottooltip-top';
+      ? 'custom-button-tooltip-bottom'
+      : 'custom-button-tooltip-top';
 
     const htmlDivElement: HTMLDivElement = document.createElement('div');
 

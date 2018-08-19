@@ -1,0 +1,101 @@
+$primary-color-text: #433;
+$primary-color-background: rgb(247, 247, 247);
+$primary-color-border: #360f0f;
+
+%custom-button-tooltip {
+  padding: 10px;
+  color: $primary-color-text;
+  border: 1px solid $primary-color-border;
+  background-color: $primary-color-background;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+%custom-button-tooltip-after {
+  position: absolute;
+  content: '';
+  border: 10px solid;
+
+  right: calc(100% - 40px);
+}
+
+@mixin custom-button-tooltip-position($position) {
+  @if $position == 'top' {
+    bottom: 100%;
+    margin-top: -70px;
+  } @else if $position == 'bottom' {
+    top: 100%;
+    margin-top: 20px;
+  }
+}
+
+@mixin custom-button-tooltip-after-position($position) {
+  @if $position == 'top' {
+    border-color: $primary-color-background
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0);
+    top: 100%;
+  } @else if $position == 'bottom' {
+    border-color: rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      $primary-color-background
+      rgba(0, 0, 0, 0);
+    top: 0px;
+    margin-top: -20px;
+    /*transform: translateX(-100px)*/
+  }
+}
+
+@mixin custom-button-tooltip-before-position($position) {
+  @if $position == 'top' {
+    border: 11px solid;
+    margin-right: -1px;
+    border-color: $primary-color-border
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0);
+    top: 100%;
+  } @else if $position == 'bottom' {
+    border: 11px solid;
+    margin-right: -1px;
+    border-color: rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0)
+      $primary-color-border
+      rgba(0, 0, 0, 0);
+    top: 0px;
+    margin-top: -22px;
+    /*transform: translateX(-100px)*/
+  }
+}
+
+.custom-button-tooltip-top {
+  @extend %custom-button-tooltip;
+  @include custom-button-tooltip-position('top');
+}
+.custom-button-tooltip-bottom {
+  @extend %custom-button-tooltip;
+  @include custom-button-tooltip-position('bottom');
+}
+
+.custom-button-tooltip-top:after {
+  @extend %custom-button-tooltip-after;
+  @include custom-button-tooltip-after-position('top');
+}
+
+.custom-button-tooltip-bottom:after {
+  @extend %custom-button-tooltip-after;
+  @include custom-button-tooltip-after-position('bottom');
+}
+
+.custom-button-tooltip-top:before {
+  @extend %custom-button-tooltip-after;
+  @include custom-button-tooltip-before-position('top');
+}
+
+.custom-button-tooltip-bottom:before {
+  @extend %custom-button-tooltip-after;
+  @include custom-button-tooltip-before-position('bottom');
+}
