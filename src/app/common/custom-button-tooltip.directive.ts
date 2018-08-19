@@ -82,13 +82,13 @@ export class CustomButtonTooltipDirective implements OnInit, OnDestroy {
 
   show() {
     // debugger;
-    if (this.htmlDivElement) {
-      this.hide();
-    }
+    this.hide();
+
     this.htmlDivElement = this.getTooltipElement(
       this.isPositionBelow,
       this.appCustomButtonTooltip
     );
+
     if (this.clickIsInside) {
       this.el.parentNode.appendChild(this.htmlDivElement);
     } else {
@@ -97,7 +97,9 @@ export class CustomButtonTooltipDirective implements OnInit, OnDestroy {
   }
 
   hide() {
-    this.htmlDivElement.remove();
+    if (this.htmlDivElement) {
+      this.htmlDivElement.remove();
+    }
   }
 
   getTooltipElement(
