@@ -22,7 +22,7 @@ If you scroll down to an open tooltip it should detect being at the edge of the 
 
 Style using Bootstrap sass ++ <strong>(all styles are done in SCSS. Its next generation of sass)</strong>
 
-Add at least one accessibility feature + <strong>(Control Tab Order in HTML nevigated by tabindex between 'button', 'a', 'div' based buttons)</strong>
+Add at least one accessibility feature + <strong>(Control Tab Order in HTML nevigated by tabindex between buttons; Press the <kbd>ALT+1-4</kbd> keys to click the button)</strong>
 
 # Tooltip
 
