@@ -1,16 +1,28 @@
 <div class="container button-container">
   <div class="row">
     <div class="col-lg-3">
-      <button tabindex="1" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 1'">Test 1 line tooltip</button>
+      <p>
+        Press the
+        <kbd>ALT+1</kbd> keys to click the button</p>
+      <button tabindex="1" accesskey="1" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 1'">Test 1 line tooltip</button>
     </div>
     <div class="col-lg-3">
-      <button tabindex="2" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 2'<br />Tooltip for button 'Test 2' ">Test 2 lines tooltip</button>
+      <p>
+        Press the
+        <kbd>ALT+2</kbd> keys to click the button</p>
+      <button tabindex="2" accesskey="2" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 2'<br />Tooltip for button 'Test 2' ">Test 2 lines tooltip</button>
     </div>
     <div class="col-lg-3">
-      <a tabindex="3" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 3'<br />Tooltip for button 'Test 3'<br />Tooltip for button 'Test 3'">Test 3 lines tooltip</a>
+      <p>
+        Press the
+        <kbd>ALT+3</kbd> keys to click the button</p>
+      <button tabindex="3" accesskey="3" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 3'<br />Tooltip for button 'Test 3'<br />Tooltip for button 'Test 3'">Test 3 lines tooltip</button>
     </div>
     <div class="col-lg-3">
-      <div tabindex="4" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'">Test 4 lines tooltip</div>
+      <p>
+        Press the
+        <kbd>ALT+4</kbd> keys to click the button</p>
+      <button tabindex="4" accesskey="4" type="button" class="btn btn-sm btn-default" (click)="onButtonClick()" appCustomButtonTooltip="Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'<br />Tooltip for button 'Test 4'">Test 4 lines tooltip</button>
     </div>
   </div>
 </div>
